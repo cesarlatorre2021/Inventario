@@ -25,8 +25,14 @@ public interface ProveedorCrudRepositorio extends CrudRepository <Proveedor, Int
 	@Modifying
 	@Query(value = "UPDATE PROVEEDOR "
 			+ "        SET RAZONSOCIAL = :razonsocial"
+			+ "           ,DIRECCION = :direccion"
+			+ "           ,TELEFONO  = :telefono"
+			+ "           ,SNACTIVO  = :snactivo"
 			+ "           ,FECHAMODIFICACION = DATE"
 			+ "      WHERE IDPROVEEDOR = :idproveedor", nativeQuery = true)
 	void modificarProveedor(@Param("razonsocial") String razonsocial,
-			                @Param("idproveedor") String idproveedor);
+			                @Param("idproveedor") String idproveedor,
+			                @Param("direccion") String direccion,
+			                @Param("telefono") Long telefono,
+			                @Param("snactivo") boolean snactivo);
 }

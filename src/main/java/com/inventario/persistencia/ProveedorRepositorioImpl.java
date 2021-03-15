@@ -41,7 +41,11 @@ public class ProveedorRepositorioImpl implements ProveedorRepositorio {
 	
 	@Override
 	public void modify(Proveedor proveedor) {
-		proveedorCrudRepositorio.modificarProveedor(proveedor.getRazonsocial(), proveedor.getIdproveedor());
+		proveedorCrudRepositorio.modificarProveedor(proveedor.getRazonsocial(), 
+				                                    proveedor.getIdproveedor(), 
+				                                    proveedor.getDireccion(), 
+				                                    proveedor.getTelefono(), 
+				                                    proveedor.isSnactivo());
 	}
 
 }

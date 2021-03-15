@@ -43,7 +43,7 @@ public class ProveedorControlador {
     	@ApiResponse(code = 200, message = "OK"),
     	@ApiResponse(code = 484, message = "Products not found")
     })
-	public Optional<Proveedor> getProveedor(@ApiParam(value = "the id of the product", required = true, example ="7") @PathVariable("proveedorId") String proveedorId){
+	public Optional<Proveedor> getProveedor(@ApiParam(value = "El id del el proveedor", required = true, example ="7") @PathVariable("proveedorId") String proveedorId){
 		return proveedorServicio.getProveedorId(proveedorId);
 	}
     

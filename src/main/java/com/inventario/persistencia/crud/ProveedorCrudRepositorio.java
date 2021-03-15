@@ -13,8 +13,8 @@ public interface ProveedorCrudRepositorio extends CrudRepository <Proveedor, Int
 	
 	@Query(value = "SELECT * "
 			+ "       FROM PROVEEDOR "
-			+ "      WHERE IDPROVEEDOR = ?", nativeQuery = true)
-	Optional<Proveedor> listarProveedorID(String idProveedor);
+			+ "      WHERE IDPROVEEDOR = :idproveedor", nativeQuery = true)
+	Optional<Proveedor> listarProveedorID(@Param("idproveedor") String idProveedor);
 	
 	@Modifying
 	@Query(value = "DELETE "

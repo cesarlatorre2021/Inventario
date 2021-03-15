@@ -1,8 +1,11 @@
 package com.inventario.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +22,10 @@ public class Proveedor {
 	private LocalDateTime fechadesvinculacion;
 	private LocalDateTime fechamodificacion;
 	private LocalDateTime fechacreacion;
+	
+	//Se creo por la relacion de proveedores productos
+    @OneToMany(mappedBy = "proveedor")
+    private List<Producto> productos;
 	
 	public String getIdproveedor() {
 		return idproveedor;

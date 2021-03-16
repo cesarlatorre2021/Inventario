@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.inventario.entity.Proveedor;
 
@@ -17,6 +18,7 @@ public interface ProveedorCrudRepositorio extends CrudRepository <Proveedor, Int
 	Optional<Proveedor> listarProveedorID(@Param("idproveedor") String idProveedor);
 	
 	@Modifying
+	@Transactional
 	@Query(value = "DELETE "
 			+ "       FROM PROVEEDOR "
 			+ "      WHERE IDPROVEEDOR = ?", nativeQuery = true)

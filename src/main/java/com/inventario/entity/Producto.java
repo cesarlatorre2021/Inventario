@@ -22,7 +22,7 @@ public class Producto {
 	private LocalDateTime fechamodificacion;
 	
     @ManyToOne
-    @JoinColumn(name = "idproveedor", insertable = false, updatable = false)
+    @JoinColumn(name = "idproveedor", insertable = true, updatable = false)
     private Proveedor proveedor;
 	
 	public String getIdProducto() {
@@ -80,5 +80,6 @@ public class Producto {
 	public void setProveedor(Proveedor proveedor) {
 		this.proveedor = proveedor;
 	}
-	
+
+
 }

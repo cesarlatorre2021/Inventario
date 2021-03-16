@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.inventario.entity.InventarioBodega;
 
@@ -17,6 +18,7 @@ public interface InventarioBodegaCrudRepositorio extends CrudRepository <Inventa
 	Optional<InventarioBodega> listarInventarioBodegaID(@Param("idproductobodega") String idProductoBodega);
 	
 	@Modifying
+	@Transactional
 	@Query(value = "DELETE "
 			+ "       FROM INVENTARIO_BODEGA "
 			+ "      WHERE IDPRODUCTOBODEGA = ?", nativeQuery = true)

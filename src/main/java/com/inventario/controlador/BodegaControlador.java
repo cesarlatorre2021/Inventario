@@ -38,12 +38,12 @@ public class BodegaControlador {
     } 
     
     @GetMapping("/All/{bodegaId}")
-    @ApiOperation("Search a product with and ID")
+    @ApiOperation("busca una bodega con un ID")
     @ApiResponses({
     	@ApiResponse(code = 200, message = "OK"),
-    	@ApiResponse(code = 484, message = "Products not found")
+    	@ApiResponse(code = 484, message = "bodega not found")
     })
-	public Optional<Bodega> getProveedor(@ApiParam(value = "El id del el proveedor", required = true, example ="7") @PathVariable("bodegaId") String bodegaId){
+	public Optional<Bodega> getProveedor(@ApiParam(value = "El id de la bodega", required = true, example ="7") @PathVariable("bodegaId") String bodegaId){
 		return bodegaServicio.getBodegaId(bodegaId);
 	}
     
@@ -54,9 +54,8 @@ public class BodegaControlador {
     
     @SuppressWarnings("rawtypes")
    	@DeleteMapping("/delete/{id}")
-   	public ResponseEntity delete (@PathVariable("id") String proveedorId) {
-    	System.out.println("Esto es lo que retorna el metodo: ");
-   		if(bodegaServicio.delete(proveedorId) == true){
+   	public ResponseEntity delete (@PathVariable("id") String bodegaId) {
+   		if(bodegaServicio.delete(bodegaId) == true){
    			return new ResponseEntity<>(HttpStatus.OK);
    		}else {
    			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

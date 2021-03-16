@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.inventario.entity.Bodega;
 
@@ -17,10 +18,11 @@ public interface BodegaCrudRepositorio extends CrudRepository <Bodega, Integer>{
 	Optional<Bodega> listarBodegaID(@Param("idbodega") String idBodega);
 	
 	@Modifying
+	@Transactional
 	@Query(value = "DELETE "
 			+ "       FROM BODEGA "
-			+ "      WHERE IDBODEGA = :idbodega", nativeQuery = true)
-	void deleteForId(@Param("idbodega") String idBodega);
+			+ "      WHERE IDBODEGA = ?", nativeQuery = true)
+	void deleteForId(String idBodega);
 	
 	@Modifying
 	@Query(value = "UPDATE BODEGA "

@@ -38,12 +38,12 @@ public class ProveedorControlador {
     } 
     
     @GetMapping("/All/{proveedorId}")
-    @ApiOperation("Search a product with and ID")
+    @ApiOperation("busca un proveedor con un ID")
     @ApiResponses({
     	@ApiResponse(code = 200, message = "OK"),
     	@ApiResponse(code = 484, message = "Products not found")
     })
-	public Optional<Proveedor> getProveedor(@ApiParam(value = "El id del el proveedor", required = true, example ="7") @PathVariable("proveedorId") String proveedorId){
+	public Optional<Proveedor> getProveedor(@ApiParam(value = "El id del proveedor", required = true, example ="7") @PathVariable("proveedorId") String proveedorId){
 		return proveedorServicio.getProveedorId(proveedorId);
 	}
     
@@ -55,7 +55,6 @@ public class ProveedorControlador {
     @SuppressWarnings("rawtypes")
    	@DeleteMapping("/delete/{id}")
    	public ResponseEntity delete (@PathVariable("id") String proveedorId) {
-    	System.out.println("Esto es lo que retorna el metodo: ");
    		if(proveedorServicio.delete(proveedorId) == true){
    			return new ResponseEntity<>(HttpStatus.OK);
    		}else {

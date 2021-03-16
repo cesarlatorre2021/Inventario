@@ -38,12 +38,12 @@ public class ProductoControlador {
     } 
     
     @GetMapping("/All/{productoId}")
-    @ApiOperation("Search a product with and ID")
+    @ApiOperation("Busca un producto con un ID")
     @ApiResponses({
     	@ApiResponse(code = 200, message = "OK"),
-    	@ApiResponse(code = 484, message = "Products not found")
+    	@ApiResponse(code = 484, message = "Productos not found")
     })
-	public Optional<Producto> getProveedor(@ApiParam(value = "El id del el proveedor", required = true, example ="7") @PathVariable("productoId") String productoId){
+	public Optional<Producto> getProveedor(@ApiParam(value = "El id del producto", required = true, example ="7") @PathVariable("productoId") String productoId){
 		return productoServicio.getProductoId(productoId);
 	}
     
@@ -55,7 +55,6 @@ public class ProductoControlador {
     @SuppressWarnings("rawtypes")
    	@DeleteMapping("/delete/{id}")
    	public ResponseEntity delete (@PathVariable("id") String proveedorId) {
-    	System.out.println("Esto es lo que retorna el metodo: ");
    		if(productoServicio.delete(proveedorId) == true){
    			return new ResponseEntity<>(HttpStatus.OK);
    		}else {

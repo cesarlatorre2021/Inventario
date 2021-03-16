@@ -38,7 +38,11 @@ public class BodegaRepositorioImpl implements BodegaRepositorio {
 
 	@Override
 	public void modify(Bodega bodega) {
-		bodegaCrudRepositorio.modificarProducto(bodega.getNombrebodega(), bodega.getDireccion(), bodega.getCiudad(), bodega.getDepartamento(), bodega.getPais());
+		bodegaCrudRepositorio.modificarProducto(bodega.getNombrebodega(), 
+				                                bodega.getDireccion(), 
+				                                bodega.getCiudad(), 
+				                                bodega.getDepartamento(), 
+				                                bodega.getPais());
 	}
 
 }

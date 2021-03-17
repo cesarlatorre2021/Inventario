@@ -24,11 +24,12 @@ public class InventarioPuntoVenta {
 	
 	@ManyToOne
     @MapsId("idpuntosventa")
-    @JoinColumn(name = "idpuntosventa", insertable = false, updatable = false)
+    @JoinColumn(name = "idpuntosventa", insertable = true, updatable = false)
     private PuntoVenta puntoVenta;
 
     @ManyToOne
-    @JoinColumn(name = "idproducto", insertable = false, updatable = false)
+    @MapsId("idproducto")
+    @JoinColumn(name = "idproducto", insertable = true, updatable = false)
     private Producto producto;
 
 	public InventarioPuntoVentaPK getId() {

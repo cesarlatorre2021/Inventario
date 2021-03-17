@@ -14,14 +14,14 @@ public interface PuntoVentaCrudRepositorio extends CrudRepository <PuntoVenta, I
 	
 	@Query(value = "SELECT * "
 			+ "       FROM PUNTOVENTA "
-			+ "      WHERE IDPUNTOVENTA = :idpuntoventa", nativeQuery = true)
+			+ "      WHERE IDPUNTOSVENTA = :idpuntoventa", nativeQuery = true)
 	Optional<PuntoVenta> listarPuntoVentaID(@Param("idpuntoventa") String idPuntoVenta);
 	
 	@Modifying
 	@Transactional
 	@Query(value = "DELETE "
 			+ "       FROM PUNTOVENTA "
-			+ "      WHERE IDPUNTOVENTA = ?", nativeQuery = true)
+			+ "      WHERE IDPUNTOSVENTA = ?", nativeQuery = true)
 	void deleteForId(String idPuntoVenta);
 	
 	@Modifying
@@ -33,7 +33,7 @@ public interface PuntoVentaCrudRepositorio extends CrudRepository <PuntoVenta, I
 			+ "           ,PAIS = :pais"
 			+ "           ,TELEFONO = :telefono"
 			+ "           ,FECHAMODIFICACION = DATE"
-			+ "      WHERE IDPUNTOVENTA = :idpuntoventa", nativeQuery = true)
+			+ "      WHERE IDPUNTOSVENTA = :idpuntoventa", nativeQuery = true)
 	void modificarPuntoVenta(@Param("razonsocial") String razonsocial,
 			                @Param("direccion") String direccion,
 			                @Param("ciudad") String ciudad,

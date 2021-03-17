@@ -25,11 +25,12 @@ public class InventarioBodega {
 
 	@ManyToOne
 	@MapsId("idbodega")
-	@JoinColumn(name = "idbodega", insertable = false, updatable = false)
+	@JoinColumn(name = "idbodega", insertable = true, updatable = false)
 	private Bodega bodega;
 	
     @ManyToOne
-	@JoinColumn(name = "idproducto", insertable = false, updatable = false)
+    @MapsId("idproducto")
+	@JoinColumn(name = "idproducto", insertable = true, updatable = false)
 	private Producto producto;
 
 	public InventarioBodegaPK getId() {

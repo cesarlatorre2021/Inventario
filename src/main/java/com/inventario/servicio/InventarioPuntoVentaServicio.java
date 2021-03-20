@@ -39,5 +39,5 @@ public class InventarioPuntoVentaServicio {
     public InventarioPuntoVenta modify(InventarioPuntoVenta save) {
         return inventarioPuntoVentaRepositorio.save(save);
     }
-
+    
 }

@@ -10,6 +10,7 @@ import com.inventario.entity.InventarioPuntoVenta;
 import com.inventario.persistencia.crud.InventarioPuntoVentaCrudRepositorio;
 import com.inventario.repositorio.InventarioPuntoVentaRepositorio;
 
+
 @Repository
 public class InventarioPuntoVentaRepositorioImpl implements InventarioPuntoVentaRepositorio {
 	

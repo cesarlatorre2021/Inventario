@@ -10,8 +10,7 @@ public class InventarioPuntoVentaPK implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -680095783116605538L;
-	
+	private static final long serialVersionUID = 1L;
 	private String idproducto;
 	private String idpuntosventa;
 	

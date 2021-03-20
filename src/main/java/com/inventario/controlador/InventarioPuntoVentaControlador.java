@@ -35,7 +35,7 @@ public class InventarioPuntoVentaControlador {
     @ApiResponse(code = 200, message = "OK")
 	public ResponseEntity<List<InventarioPuntoVenta>> getAll(){
 		return new ResponseEntity<> (inventarioPuntoVentaServicio.getAll(), HttpStatus.OK);
-    } 
+    }
 	
     @GetMapping("/All/{idInventarioPuntoVenta}")
     @ApiOperation("busca los datos del inventario del punto de venta con un ID")

@@ -5,12 +5,13 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.inventario.entity.PuntoVenta;
 
-public interface PuntoVentaCrudRepositorio extends CrudRepository <PuntoVenta, Integer> {
+public interface PuntoVentaCrudRepositorio extends CrudRepository <PuntoVenta, Integer>, PagingAndSortingRepository <PuntoVenta, Integer>{
 	
 	@Query(value = "SELECT * "
 			+ "       FROM PUNTOVENTA "

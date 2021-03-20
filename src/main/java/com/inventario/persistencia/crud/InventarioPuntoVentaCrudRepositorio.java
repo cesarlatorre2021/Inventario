@@ -33,5 +33,5 @@ public interface InventarioPuntoVentaCrudRepositorio extends CrudRepository <Inv
 	void modificarProducto(@Param("cantproductosent") Long cantproductosent,
 			               @Param("cantproductossal") Long cantproductossal,
 			               @Param("idinventariopuntoventa") String idInventarioPuntoVenta);
-
+	
 }

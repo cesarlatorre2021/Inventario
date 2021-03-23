@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.inventario.entity.Proveedor;
 import com.inventario.repositorio.ProveedorRepositorio;
@@ -37,6 +39,10 @@ public class ProveedorServicio {
     
     public Proveedor modify(Proveedor proveedor) {
         return proveedorRepositorio.save(proveedor);
+    }
+    
+    public Page<Proveedor> findAll(Pageable pageable){
+    	return proveedorRepositorio.findAll(pageable);
     }
 
 }

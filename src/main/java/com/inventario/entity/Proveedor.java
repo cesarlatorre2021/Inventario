@@ -26,6 +26,14 @@ public class Proveedor {
 	//Se creo por la relacion de proveedores productos
     @OneToMany(mappedBy = "proveedor")
     private List<Producto> productos;
+    
+    public Proveedor() {
+
+    }
+
+    public Proveedor(String idproveedor) {
+      this.idproveedor = idproveedor;
+    }
 	
 	public String getIdproveedor() {
 		return idproveedor;
@@ -89,6 +97,11 @@ public class Proveedor {
 	
 	public void setFechacreacion(LocalDateTime fechacreacion) {
 		this.fechacreacion = fechacreacion;
+	}
+	
+	@Override
+    public String toString() {
+	    return "Tutorial [id=" + idproveedor +"]";
 	}
 	
 }
